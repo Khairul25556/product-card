@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <title>product-card</title>
+</head>
+
+<body>
+    <div class="product-card">
+
+        <!-- logo-card -->
+        <div class="logo-card">
+            <img src="assets/logo.jpg" alt="logo">
+            <i class="fa fa-shopping-bag"></i>
+        </div>
+
+        <!-- main-images -->
+        <div class="main-images">
+            <img src="assets/blue.png" alt="blue" id="blue" class="blue active">
+            <img src="assets/pink.png" alt="pink" id="pink" class="pink">
+            <img src="assets/yellow.png" alt="yellow" id="yellow" class="yellow">
+        </div>
+
+        <!-- product-details -->
+        <div class="shoe-details">
+            <span class="shoe_name">ADDIDAS GAZE ZX</span>
+            <p>The adidas ZX Gaze offers a bold, futuristic design with breathable mesh, TPU overlays, and cushioned EVA midsole for all-day comfort.</p>
+            <div class="stars">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                <i class="fa fa-star-o" aria-hidden="true"></i>
+            </div>
+        </div>
+
+        <!-- color-price -->
+        <div class="color-price">
+
+            <!-- color-option -->
+            <div class="color-option">
+                <span class="color">Colour:</span>
+                <div class="circles">
+                    <span class="circle blue active" id="blue"></span>
+                    <span class="circle pink" id="pink"></span>
+                    <span class="circle yellow" id="yellow"></span>
+                </div>
+            </div>
+
+            <!-- price-option -->
+            <div class="price">
+                <span class="price_num">$11.00</span>
+                <span class="price_letter">Eleven dollar only</span>
+            </div>
+
+        </div>
+
+        <!-- button-part -->
+        <div class="button">
+            <div class="button-layer wave-effect"></div>
+            <button id="addToCartBtn">Add To Cart</button>
+        </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

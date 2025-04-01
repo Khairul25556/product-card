@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(135deg, #43cbff 10%, #9708cc 100%);
+}
+
+.product-card{
+    position: relative;
+    max-width: 355px;
+    width: 100%;
+    border-radius: 25px;
+    padding: 20px 30px 30px 30px;
+    background: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    z-index: 3;
+    overflow: hidden;
+}
+
+.product-card .logo-card{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.product-card .logo-card img{
+    height: 60px;
+    width: 60px;
+    object-fit: cover;
+}
+
+.product-card .logo-card i{
+    font-size: 27px;
+    color: #707070;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.product-card .logo-card i:hover{
+    color: #333;
+}
+
+.product-card .main-images{
+    position: relative;
+    height: 210px;
+}
+
+.product-card .main-images img{
+    position: absolute;
+    height: 300px;
+    width: 300px;
+    object-fit: cover;
+    transform: rotate(18deg);
+    left: 12px;
+    top: -40px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.product-card .main-images img.active{
+    opacity: 1;
+}
+
+.product-card .shoe-details .shoe_name{
+    font-size: 24px;
+    font-weight: 500;
+    color: #161616;
+}
+
+.product-card .shoe-details p{
+    font-size: 12px;
+    font-weight: 400;
+    color: #333;
+    text-align: justify;
+}
+
+.product-card .shoe-details .stars i{
+    margin: 0 -1px; /*reduce width slightly by pulling the element inward*/
+}
+
+.product-card .color-price .color-option{
+    display: flex;
+    align-items: center;
+}
+
+.color-price{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.color-price .color-option .color{
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+    margin-right: 8px;
+}
+
+.color-option .circles{
+    display: flex;
+}
+
+.color-option .circles .circle{
+    height: 18px;
+    width: 18px;
+    background: #0071c7;
+    border-radius: 50%;
+    margin: 0 4px;
+    cursor: pointer;
+    transition: all 0.4s ease; 
+}
+
+.color-option .circles .circle.blue.active{
+    box-shadow: 0 0 0 2px #fff, 0 0 0 4px #0071c7; /*If a blue circle (.circle.blue) has the active class, it gets a white outline (2px thick) and then a blue outline (4px thick) around it.*/
+}
+
+.color-option .circles .circle.pink {
+    background: #fa1795;
+}
+
+.color-option .circles .circle.pink.active{
+    box-shadow: 0 0 0 2px #fff, 0 0 0 4px #fa1795;
+}
+
+.color-option .circles .circle.yellow {
+    background: #f5da00;
+}
+
+.color-option .circles .circle.yellow.active{
+    box-shadow: 0 0 0 2px #fff, 0 0 0 4px #f5da00;
+}
+
+.color-price .price{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.color-price .price .price_num{
+    font-size: 25px;
+    font-weight: 600;
+    color: #707070;
+}
+
+.color-price .price .price_letter{
+    font-size: 10px;
+    font-weight: 600;
+    margin-top: -4px;
+    color: #707070;
+}
+
+.product-card .button{
+    position: relative;
+    height: 50px;
+    width: 100%;
+    border-radius: 25px;
+    margin-top: 30px;
+    overflow: hidden;
+}
+
+.product-card .button .button-layer{
+    position: absolute;
+    height: 100%;
+    width: 300%;
+    left: -100%;
+    background-image: linear-gradient(135deg, #9708cc, #43cbff, #9708cc, #43cbff);
+}
+
+.product-card .button:hover .button-layer{
+    left: 0; 
+}
+
+.product-card .button button{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background: none;
+    outline: none;
+    border: none;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #fff;
+    cursor: pointer;
+}
+
+
+/*button animation*/
+.wave-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(67, 203, 255, 0.7);
+    opacity: 1; /* Hide initially */
+    transition: clip-path 0.5s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.button.active .wave-effect {
+    opacity: 1;
+    clip-path: circle(120% at 50% 100%);
+    transition: clip-path 0.5s ease-in-out;
+}
+
+.button button {
+    position: relative;
+    z-index: 2;
+    transition: color 0.5s ease-in-out;
+}
+
+.button.active button {
+    color: white;
+}
+
+.checkmark {
+    display: none;
+    font-size: 20px;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
