@@ -17,7 +17,7 @@ A stylish and interactive product card built with HTML, CSS, and JavaScript. It 
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/your-username/product-card.git
+   git clone https://github.com/Khairul2556/product-card.git
    ```
 2. Open the project folder:
    ```sh
